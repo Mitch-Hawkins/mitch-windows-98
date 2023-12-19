@@ -1,7 +1,45 @@
 .desktop {
   display: flex;
   flex-direction: column;
-  z-index: -10;
-  border: 2px solid yellow;
+  // z-index: -10;
+  // border: 2px solid yellow;
   height: 100%;
+  gap: 0px;
+  &__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // z-index: 2;
+    // border: 2px solid red;
+    width: 96px;
+    margin-top: 30px;
+    margin-left: 30px;
+    gap: 3px;
+    &__icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid cadetblue;
+      &:active {
+        border: 2px dotted gray;
+        background-color: pink;
+        z-index: 2;
+        mix-blend-mode: overlay;
+      }
+      &--active {
+        border: 2px dotted gray;
+        background-color: pink;
+        z-index: 2;
+        mix-blend-mode: overlay;
+      }
+    }
+    &__text {
+      color: white;
+      &--active {
+        border: 2px dotted gray;
+        background-color: pink;
+        z-index: 2;
+        mix-blend-mode: overlay;
+      }
+    }
+  }
 }
