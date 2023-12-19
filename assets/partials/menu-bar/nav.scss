@@ -50,6 +50,12 @@
 }
 
 .nav__start {
+  &__active {
+    border-top-color: gray;
+    border-left-color: gray;
+    border-right-color: white;
+    border-bottom-color: white;
+  }
   width: 90px;
   height: 95%;
   outline: none;

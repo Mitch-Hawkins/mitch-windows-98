@@ -2,15 +2,11 @@ const startButton = document.querySelector("#startButton");
 
 startButton.addEventListener("click", () => {
   const startMenu = document.querySelector("#startMenu");
-  openStart(startMenu);
+  toggleStart(startMenu);
 });
 
-function openStart(startMenu) {
+function toggleStart(startMenu) {
   if (startMenu == null) return;
-  startMenu.classList.add("start__active");
-}
-
-function closeStart(startMenu) {
-  if (startMenu == null) return;
-  startMenu.classList.remove("start__active");
+  startMenu.classList.toggle("start__active");
+  startButton.classList.toggle("nav__start__active");
 }
