@@ -150,7 +150,10 @@
 //start menu
 
 .start {
-  display: flex;
+  display: none;
+  &__active {
+    display: flex;
+  }
   z-index: 10;
   position: absolute;
   transform: translateY(-304px);

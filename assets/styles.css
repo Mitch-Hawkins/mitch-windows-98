@@ -141,7 +141,7 @@
 }
 
 .start {
-  display: flex;
+  display: none;
   z-index: 10;
   position: absolute;
   transform: translateY(-304px);
@@ -154,6 +154,9 @@
   margin-left: 3px;
   height: 300px;
   width: 200px;
+}
+.start__active {
+  display: flex;
 }
 .start__banner {
   display: flex;
