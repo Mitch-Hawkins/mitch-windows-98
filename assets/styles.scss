@@ -1,0 +1,30 @@
+@use "./partials/mixins";
+@use "./partials/menu-bar/nav.scss";
+@use "./partials/desktop.scss";
+
+@font-face {
+  font-family: "Windows";
+  src: url("fonts/subset-Windows.woff2") format("woff2"),
+    url("fonts/subset-Windows.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: optional;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Windows";
+}
+
+body {
+  background-color: cadetblue;
+}
+
+.container {
+  display: flex;
+  // border: 2px solid red;
+  flex-direction: column-reverse;
+  height: 100vh;
+  width: 100vw;
+}
