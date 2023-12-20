@@ -31,19 +31,6 @@ function removeStart(startMenu) {
 
 //====OPEN MODAL FUNCTIONALITY====================================================================
 
-// recycleBinShortcut.addEventListener("dblclick", () => {
-//   const recycleBinWindow = document.querySelector("#modal-recyclebin");
-//   openRecycleBin(recycleBinWindow);
-//   recycleBinShortcut.classList.remove("desktop__article__icon--active");
-// });
-
-// function openRecycleBin(recycleBinWindow) {
-//   if (recycleBinWindow == null) return;
-//   if (recycleBinWindow.classList.contains("modal__open")) return;
-
-//   recycleBinWindow.classList.add("modal__open");
-//   addProgramToBar("Recycle Bin", "nav__program__button");
-// }
 shortcutArticle.forEach((icon) => {
   icon.addEventListener("click", () => {
     icon.classList.add("desktop__article__icon--active");
