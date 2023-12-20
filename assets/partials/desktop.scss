@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   // z-index: -10;
-  // border: 2px solid yellow;
+  border: 2px solid yellow;
   height: 100%;
   gap: 0px;
   &__article {
@@ -21,13 +21,13 @@
       border: 2px solid cadetblue;
       &:active {
         border: 2px dotted gray;
-        background-color: pink;
+        background-color: skyblue;
         z-index: 2;
         mix-blend-mode: overlay;
       }
       &--active {
         border: 2px dotted gray;
-        background-color: pink;
+        background-color: skyblue;
         z-index: 2;
         mix-blend-mode: overlay;
       }
@@ -36,10 +36,66 @@
       color: white;
       &--active {
         border: 2px dotted gray;
-        background-color: pink;
+        background-color: lightblue;
         z-index: 2;
         mix-blend-mode: overlay;
       }
     }
   }
+  &__modal {
+    display: none;
+
+    flex-direction: column;
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: black;
+    border-bottom-color: black;
+    background-color: lightgray;
+    &__header {
+      display: flex;
+      border: 2px solid navy;
+      background-color: navy;
+      width: 98.5%;
+      height: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+      &__text {
+        color: white;
+        margin-left: 5px;
+      }
+      &__button {
+        display: flex;
+        margin-left: auto;
+        margin-right: 5px;
+        background-color: lightgray;
+        border-top-color: white;
+        border-left-color: white;
+        // text-align: center;
+        justify-content: center;
+        // align-items: center;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__content {
+      display: flex;
+      border: 2px solid black;
+      background-color: white;
+      width: 95%;
+      height: 90%;
+      margin: auto;
+      margin-right: 11px;
+    }
+  }
+}
+
+.modal__open {
+  display: flex;
 }

@@ -110,6 +110,8 @@
 }
 
 .nav__program__button {
+  display: flex;
+  flex-wrap: wrap;
   border: 2px solid;
   border-top-color: white;
   border-left-color: white;
@@ -118,6 +120,10 @@
   background: none;
   width: 25%;
   max-width: 250px;
+  padding-left: 5px;
+  text-align: left;
+  align-items: center;
+  overflow: hidden;
 }
 .nav__program__button:active {
   border-top-color: gray;
@@ -238,6 +244,7 @@
 .desktop {
   display: flex;
   flex-direction: column;
+  border: 2px solid yellow;
   height: 100%;
   gap: 0px;
 }
@@ -257,13 +264,13 @@
 }
 .desktop__article__icon:active {
   border: 2px dotted gray;
-  background-color: pink;
+  background-color: skyblue;
   z-index: 2;
   mix-blend-mode: overlay;
 }
 .desktop__article__icon--active {
   border: 2px dotted gray;
-  background-color: pink;
+  background-color: skyblue;
   z-index: 2;
   mix-blend-mode: overlay;
 }
@@ -272,9 +279,62 @@
 }
 .desktop__article__text--active {
   border: 2px dotted gray;
-  background-color: pink;
+  background-color: lightblue;
   z-index: 2;
   mix-blend-mode: overlay;
+}
+.desktop__modal {
+  display: none;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  z-index: 5;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
+  background-color: lightgray;
+}
+.desktop__modal__header {
+  display: flex;
+  border: 2px solid navy;
+  background-color: navy;
+  width: 98.5%;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.desktop__modal__header__text {
+  color: white;
+  margin-left: 5px;
+}
+.desktop__modal__header__button {
+  display: flex;
+  margin-left: auto;
+  margin-right: 5px;
+  background-color: lightgray;
+  border-top-color: white;
+  border-left-color: white;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+.desktop__modal__content {
+  display: flex;
+  border: 2px solid black;
+  background-color: white;
+  width: 95%;
+  height: 90%;
+  margin: auto;
+  margin-right: 11px;
+}
+
+.modal__open {
+  display: flex;
 }
 
 @font-face {
