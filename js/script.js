@@ -7,7 +7,7 @@ const closeButton = document.querySelectorAll(
 );
 const navBar = document.querySelector("#program-bar");
 
-const modalHeader = document.querySelectorAll(".desktop__modal__header");
+const desktopModal = document.querySelectorAll(".desktop__modal");
 
 //====START MENU FUNCTIONALITY=====================================================================
 
@@ -62,17 +62,6 @@ function openWindow(window, windowHeader) {
   programTitle = str[0].toUpperCase() + str.slice(1); //makes first letter capital
   addProgramToBar(window.id.substring(6, window.id.length), programTitle);
   console.log(window.id); //for Debugging
-
-  windowHeader.addEventListener("click", () => {
-    windowHeader.classList.add("desktop__modal__header--active");
-    console.log("Modal Focused");
-  });
-  windowHeader.addEventListener("blur", () => {
-    windowHeader.classList.remove("desktop__modal__header--active");
-    console.log("Modal Unfocused");
-  });
-  windowHeader.click();
-  windowHeader.focus();
 }
 
 function addProgramToBar(cls, programTitle) {
@@ -89,18 +78,20 @@ function addProgramToBar(cls, programTitle) {
   newElement.addEventListener("click", () => {
     if (newElement == null) return;
     newElement.classList.add("nav__program__button--active");
+    newElement.focus();
     console.log("Program Clicked");
   });
   newElement.addEventListener("blur", () => {
     if (newElement == null) return;
     newElement.classList.remove("nav__program__button--active");
+    newElement.blur();
     console.log("Program Blurred");
   });
 
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
   parentNode.appendChild(newElement); //creates the new button as a child of the navBar element
 
-  newElement.click(); //Why Did I need...
+  // newElement.click(); //Why Did I need...
   newElement.focus(); //...both of these??
 
   console.log(newElement);
@@ -141,17 +132,19 @@ function closeWindow(modal) {
 }
 
 //====MODAL HEADER FOCUS FUNCTIONALITY==========================================================
-
-// modalHeader.forEach((header) => {
-//   header.addEventListener("click", () => {
-//     header.classList.add("desktop__modal__header--active");
-//     console.log("Modal Focused");
-//   });
-//   header.addEventListener("blur", () => {
-//     header.classList.remove("desktop__modal__header--active");
-//     console.log("Modal Unfocused");
-//   });
-// });
+desktopModal.forEach((header) => {
+  header.addEventListener("click", () => {
+    header.classList.add("desktop__modal__header--active");
+    header.focus();
+    console.log("Modal Focused");
+  });
+  header.addEventListener("blur", () => {
+    header.classList.remove("desktop__modal__header--active");
+    header.blur();
+    console.log("Modal Unfocused");
+  });
+  // header.click();
+});
 
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
 
