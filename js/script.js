@@ -51,56 +51,51 @@ function openWindow(window) {
   if (window == null) return;
   if (window.classList.contains("modal__open")) return;
 
-  window.classList.add("modal__open");
+  window.classList.add("modal__open"); //make the modal visible
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
-    .join(" ");
-  programTitle = str[0].toUpperCase() + str.slice(1);
+    .join(" "); //takes the id tag of the modal, removes the "modal-" from it, splits into words via camel casing reg ex, and formats it with Capital first letters to be displayed as a title (eg: modal-recycleBin -> recycle, Bin, recycle Bin)
+  programTitle = str[0].toUpperCase() + str.slice(1); //makes first letter capital
   addProgramToBar(window.id.substring(6, window.id.length), programTitle);
-  console.log(window.id);
+  console.log(window.id); //for Debugging
 }
 
 function addProgramToBar(cls, programTitle) {
-  const newElement = document.createElement("button");
-  const parentNode = navBar;
-
-  newElement.classList.add("nav__program__button");
-
-  newElement.classList.add(cls);
-
-  const newText = document.createTextNode(programTitle);
-
-  newElement.appendChild(newText);
-
-  parentNode.appendChild(newElement);
+  const newElement = document.createElement("button"); //creates a new button HTML element
+  const parentNode = navBar; //makes the parent Node/Element of the new button the navBar
+  newElement.classList.add("nav__program__button"); //gives it the styling of a nav program button by adding the class
+  newElement.classList.add(cls); //adds the id of the corresponding modal to the program buttons class list
+  const newText = document.createTextNode(programTitle); //creates the text to be put inbetween the html tags to be displayed as the buttons label.
+  newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
+  parentNode.appendChild(newElement); //creates the new button as a child of the navBar element
 }
 //====CLOSE MODAL FUNCTIONALITY=================================================================
 
 closeButton.forEach((button) => {
   button.addEventListener("click", () => {
-    const modal = button.closest(".desktop__modal");
-    let prog;
+    const modal = button.closest(".desktop__modal"); //gets the HTML element of the modal that is the parent of the close button that was just clicked
 
-    // const progArr = Array.from(
-    //   document.getElementsByClassName("nav__program__button")
+    let prog; //initialising a blank variable that will eventually be set to the program bar button HTML element that will be removed from the program bar
+
+    // const progList = navBar.querySelectorAll(
+    //   `.${modal.id.substring(6, modal.id.length)}`
     // );
 
-    // const progList = document.getElementsByClassName("nav__program__button");
-    const progList = navBar.querySelectorAll(
-      `.${modal.id.substring(6, modal.id.length)}`
-    );
-    console.log(progList);
-    console.log(modal.id);
+    const progList = navBar.querySelectorAll(".nav__program__button"); //creates a NodeList of all the progrma buttons in the nav bar
+
+    console.log(progList); //For Debugging
+    console.log(modal.id); //For Debugging
 
     progList.forEach((program) => {
       if (program.classList.contains(modal.id.substring(6, modal.id.length))) {
         prog = program;
+        //break??
       }
-    });
+    }); //Loops through the NodeList and if the HTML element in the list contains the modals id in its classList, then the prog variable now is set to that HTML element.
 
-    closeWindow(modal);
-    removeProgramFromBar(prog);
+    closeWindow(modal); //passes through the modal to be closed (have the modal__open class removed)
+    removeProgramFromBar(prog); //passes through the program bar button HTML element to be removed with remove()
   });
 });
 
