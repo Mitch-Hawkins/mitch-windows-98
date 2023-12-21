@@ -55,6 +55,7 @@ function openWindow(window, windowHeader) {
   if (window.classList.contains("modal__open")) return;
 
   window.classList.add("modal__open"); //make the modal visible
+  window.classList.add("desktop__modal__header--active");
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
@@ -79,21 +80,23 @@ function addProgramToBar(cls, programTitle) {
     if (newElement == null) return;
     newElement.classList.add("nav__program__button--active");
     newElement.focus();
-    console.log("Program Clicked");
+    console.log("Focus is on Program Bar");
+    const elementModal = document.querySelector(`#modal-${cls}`);
+    console.log(elementModal);
+    elementModal.classList.add("desktop__modal__header--active");
   });
   newElement.addEventListener("blur", () => {
     if (newElement == null) return;
     newElement.classList.remove("nav__program__button--active");
-    newElement.blur();
-    console.log("Program Blurred");
+    console.log("Focus has left Program Bar");
+    const elementModal = document.querySelector(`#modal-${cls}`);
+    elementModal.classList.remove("desktop__modal__header--active");
   });
 
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
   parentNode.appendChild(newElement); //creates the new button as a child of the navBar element
 
-  // newElement.click(); //Why Did I need...
-  newElement.focus(); //...both of these??
-
+  newElement.click(); //Why Did I need...
   console.log(newElement);
 }
 
@@ -132,18 +135,27 @@ function closeWindow(modal) {
 }
 
 //====MODAL HEADER FOCUS FUNCTIONALITY==========================================================
-desktopModal.forEach((header) => {
-  header.addEventListener("click", () => {
-    header.classList.add("desktop__modal__header--active");
-    header.focus();
-    console.log("Modal Focused");
+desktopModal.forEach((modal) => {
+  modal.addEventListener("click", () => {
+    modal.classList.add("desktop__modal__header--active");
+    // modal.focus();
+    console.log("Focus is on Modal");
+    const modalProgramBar = document.querySelector(
+      `.${modal.id.substring(6, modal.id.length)}`
+    );
+    if (modalProgramBar != null) {
+      modalProgramBar.classList.add("nav__program__button--active");
+    }
   });
-  header.addEventListener("blur", () => {
-    header.classList.remove("desktop__modal__header--active");
-    header.blur();
-    console.log("Modal Unfocused");
+  modal.addEventListener("blur", () => {
+    modal.classList.remove("desktop__modal__header--active");
+    console.log("Focus has left Modal");
+    const modalProgramBar = document.querySelector(
+      `.${modal.id.substring(6, modal.id.length)}`
+    );
+    modalProgramBar.classList.remove("nav__program__button--active");
   });
-  // header.click();
+  modal.click();
 });
 
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
@@ -161,12 +173,13 @@ function dragElement(elmnt) {
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
+    // elmnt.onmousedown = dragMouseDown;
   }
 
   function dragMouseDown(e) {
-    // e = e || window.event;
-    e.preventDefault();
+    e = e || window.event;
+    // e.preventDefault();
+    console.log(`e:${e}`);
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
@@ -177,7 +190,7 @@ function dragElement(elmnt) {
 
   function elementDrag(e) {
     e = e || window.event;
-    e.preventDefault();
+    // e.preventDefault();
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
