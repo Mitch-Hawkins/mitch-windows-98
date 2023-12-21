@@ -126,7 +126,7 @@
   align-items: center;
   overflow: hidden;
 }
-.nav__program__button:active {
+.nav__program__button--active {
   border-top-color: gray;
   border-left-color: gray;
   border-right-color: white;

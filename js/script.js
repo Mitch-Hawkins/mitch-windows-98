@@ -6,6 +6,7 @@ const closeButton = document.querySelectorAll(
   ".desktop__modal__header__button"
 );
 const navBar = document.querySelector("#program-bar");
+const programButtonArticle = navBar.querySelectorAll(".nav__program__button");
 
 //====START MENU FUNCTIONALITY=====================================================================
 
@@ -65,11 +66,33 @@ function addProgramToBar(cls, programTitle) {
   const newElement = document.createElement("button"); //creates a new button HTML element
   const parentNode = navBar; //makes the parent Node/Element of the new button the navBar
   newElement.classList.add("nav__program__button"); //gives it the styling of a nav program button by adding the class
+
+  newElement.classList.add("nav__program__button--active");
+  newElement.setAttribute("tabindex", "-1");
+
   newElement.classList.add(cls); //adds the id of the corresponding modal to the program buttons class list
   const newText = document.createTextNode(programTitle); //creates the text to be put inbetween the html tags to be displayed as the buttons label.
+
+  newElement.addEventListener("click", () => {
+    if (newElement == null) return;
+    newElement.classList.add("nav__program__button--active");
+    console.log("clicked");
+  });
+  newElement.addEventListener("blur", () => {
+    if (newElement == null) return;
+    newElement.classList.remove("nav__program__button--active");
+    console.log("blurred");
+  });
+
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
   parentNode.appendChild(newElement); //creates the new button as a child of the navBar element
+
+  newElement.click(); //Why Did I need...
+  newElement.focus(); //...both of these??
+
+  console.log(newElement);
 }
+
 //====CLOSE MODAL FUNCTIONALITY=================================================================
 
 closeButton.forEach((button) => {
@@ -107,6 +130,19 @@ function closeWindow(modal) {
   if (modal == null) return;
   modal.classList.remove("modal__open");
 }
+
+//====MODAL FOCUS FUNCTIONALITY=================================================================
+
+programButtonArticle.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.add("nav__program__button--active");
+    console.log("clicked");
+  });
+  button.addEventListener("dblclick", () => {
+    button.classList.remove("nav__program__button--active");
+    console.log("dbl clicked");
+  });
+});
 
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
 
