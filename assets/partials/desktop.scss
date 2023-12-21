@@ -65,8 +65,8 @@
     background-color: lightgray;
     &__header {
       display: flex;
-      border: 2px solid navy;
-      background-color: navy;
+      border: 2px solid gray;
+      background-color: gray;
       width: 490px;
       height: 25px;
       margin-left: auto;
@@ -88,6 +88,10 @@
         // align-items: center;
         width: 20px;
         height: 20px;
+      }
+      &--active {
+        border: 2px solid navy;
+        background-color: navy;
       }
     }
     &__content {

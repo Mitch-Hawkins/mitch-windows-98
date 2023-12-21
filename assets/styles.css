@@ -297,8 +297,8 @@
 }
 .desktop__modal__header {
   display: flex;
-  border: 2px solid navy;
-  background-color: navy;
+  border: 2px solid gray;
+  background-color: gray;
   width: 490px;
   height: 25px;
   margin-left: auto;
@@ -319,6 +319,10 @@
   justify-content: center;
   width: 20px;
   height: 20px;
+}
+.desktop__modal__header--active {
+  border: 2px solid navy;
+  background-color: navy;
 }
 .desktop__modal__content {
   display: flex;

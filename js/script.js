@@ -6,7 +6,8 @@ const closeButton = document.querySelectorAll(
   ".desktop__modal__header__button"
 );
 const navBar = document.querySelector("#program-bar");
-const programButtonArticle = navBar.querySelectorAll(".nav__program__button");
+
+const modalHeader = document.querySelectorAll(".desktop__modal__header");
 
 //====START MENU FUNCTIONALITY=====================================================================
 
@@ -43,12 +44,13 @@ shortcutArticle.forEach((icon) => {
   });
   icon.addEventListener("dblclick", () => {
     const window = document.querySelector(`#modal-${icon.id}`);
-    openWindow(window);
+    const windowHeader = document.querySelector(`#modal-${icon.id}header`);
+    openWindow(window, windowHeader);
     icon.classList.remove("desktop__article__icon--active");
   });
 });
 
-function openWindow(window) {
+function openWindow(window, windowHeader) {
   if (window == null) return;
   if (window.classList.contains("modal__open")) return;
 
@@ -60,6 +62,17 @@ function openWindow(window) {
   programTitle = str[0].toUpperCase() + str.slice(1); //makes first letter capital
   addProgramToBar(window.id.substring(6, window.id.length), programTitle);
   console.log(window.id); //for Debugging
+
+  windowHeader.addEventListener("click", () => {
+    windowHeader.classList.add("desktop__modal__header--active");
+    console.log("Modal Focused");
+  });
+  windowHeader.addEventListener("blur", () => {
+    windowHeader.classList.remove("desktop__modal__header--active");
+    console.log("Modal Unfocused");
+  });
+  windowHeader.click();
+  windowHeader.focus();
 }
 
 function addProgramToBar(cls, programTitle) {
@@ -76,12 +89,12 @@ function addProgramToBar(cls, programTitle) {
   newElement.addEventListener("click", () => {
     if (newElement == null) return;
     newElement.classList.add("nav__program__button--active");
-    console.log("clicked");
+    console.log("Program Clicked");
   });
   newElement.addEventListener("blur", () => {
     if (newElement == null) return;
     newElement.classList.remove("nav__program__button--active");
-    console.log("blurred");
+    console.log("Program Blurred");
   });
 
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
@@ -100,10 +113,6 @@ closeButton.forEach((button) => {
     const modal = button.closest(".desktop__modal"); //gets the HTML element of the modal that is the parent of the close button that was just clicked
 
     let prog; //initialising a blank variable that will eventually be set to the program bar button HTML element that will be removed from the program bar
-
-    // const progList = navBar.querySelectorAll(
-    //   `.${modal.id.substring(6, modal.id.length)}`
-    // );
 
     const progList = navBar.querySelectorAll(".nav__program__button"); //creates a NodeList of all the progrma buttons in the nav bar
 
@@ -131,18 +140,18 @@ function closeWindow(modal) {
   modal.classList.remove("modal__open");
 }
 
-//====MODAL FOCUS FUNCTIONALITY=================================================================
+//====MODAL HEADER FOCUS FUNCTIONALITY==========================================================
 
-programButtonArticle.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.add("nav__program__button--active");
-    console.log("clicked");
-  });
-  button.addEventListener("dblclick", () => {
-    button.classList.remove("nav__program__button--active");
-    console.log("dbl clicked");
-  });
-});
+// modalHeader.forEach((header) => {
+//   header.addEventListener("click", () => {
+//     header.classList.add("desktop__modal__header--active");
+//     console.log("Modal Focused");
+//   });
+//   header.addEventListener("blur", () => {
+//     header.classList.remove("desktop__modal__header--active");
+//     console.log("Modal Unfocused");
+//   });
+// });
 
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
 
