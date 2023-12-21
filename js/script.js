@@ -2,7 +2,9 @@
 
 const startButton = document.querySelector("#startButton");
 const shortcutArticle = document.querySelectorAll(".desktop__article");
-const closeButton = document.querySelector(".desktop__modal__header__button");
+const closeButton = document.querySelectorAll(
+  ".desktop__modal__header__button"
+);
 const navBar = document.querySelector("#program-bar");
 
 //====START MENU FUNCTIONALITY=====================================================================
@@ -55,12 +57,15 @@ function openWindow(window) {
     .split(/(?=[A-Z])/)
     .join(" ");
   programTitle = str[0].toUpperCase() + str.slice(1);
-  addProgramToBar("nav__program__button", programTitle);
+  addProgramToBar(window.id.substring(6, window.id.length), programTitle);
+  console.log(window.id);
 }
 
-function addProgramToBar(cls, programTitle = "Program") {
+function addProgramToBar(cls, programTitle) {
   const newElement = document.createElement("button");
   const parentNode = navBar;
+
+  newElement.classList.add("nav__program__button");
 
   newElement.classList.add(cls);
 
@@ -72,13 +77,31 @@ function addProgramToBar(cls, programTitle = "Program") {
 }
 //====CLOSE MODAL FUNCTIONALITY=================================================================
 
-closeButton.addEventListener("click", () => {
-  const modal = closeButton.closest(".desktop__modal");
-  const progNodeList = document.getElementsByClassName("nav__program__button");
-  const progBar = Array.from(progNodeList).reduce((acc, node) => acc + node);
-  console.log(progBar);
-  closeWindow(modal);
-  removeProgramFromBar(progBar);
+closeButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".desktop__modal");
+    let prog;
+
+    // const progArr = Array.from(
+    //   document.getElementsByClassName("nav__program__button")
+    // );
+
+    // const progList = document.getElementsByClassName("nav__program__button");
+    const progList = navBar.querySelectorAll(
+      `.${modal.id.substring(6, modal.id.length)}`
+    );
+    console.log(progList);
+    console.log(modal.id);
+
+    progList.forEach((program) => {
+      if (program.classList.contains(modal.id.substring(6, modal.id.length))) {
+        prog = program;
+      }
+    });
+
+    closeWindow(modal);
+    removeProgramFromBar(prog);
+  });
 });
 
 function removeProgramFromBar(programElement) {
@@ -93,6 +116,7 @@ function closeWindow(modal) {
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
 
 dragElement(document.getElementById("modal-recycleBin"));
+dragElement(document.getElementById("modal-internetExplorer"));
 
 function dragElement(elmnt) {
   var pos1 = 0,
