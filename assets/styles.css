@@ -320,7 +320,7 @@
   width: 20px;
   height: 20px;
 }
-.desktop__modal__header--active {
+.desktop__modal__header--active .desktop__modal__header {
   border: 2px solid navy;
   background-color: navy;
 }

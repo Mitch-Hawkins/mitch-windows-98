@@ -89,7 +89,8 @@
         width: 20px;
         height: 20px;
       }
-      &--active {
+      &--active .desktop__modal__header {
+        //This is all sorts of fucked, need to redo the whole of the js to get the right fckn class lmao
         border: 2px solid navy;
         background-color: navy;
       }

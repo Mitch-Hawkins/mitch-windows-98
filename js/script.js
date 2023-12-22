@@ -8,6 +8,7 @@ const closeButton = document.querySelectorAll(
 const navBar = document.querySelector("#program-bar");
 
 const desktopModal = document.querySelectorAll(".desktop__modal");
+const desktopModalHeader = document.querySelectorAll(".desktop__modal__header");
 
 //====START MENU FUNCTIONALITY=====================================================================
 
