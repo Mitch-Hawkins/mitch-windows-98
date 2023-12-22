@@ -79,7 +79,7 @@ function addProgramToBar(cls, programTitle) {
   newElement.addEventListener("click", () => {
     if (newElement == null) return;
     newElement.classList.add("nav__program__button--active");
-    newElement.focus();
+    newElement.focus(); //Problem Lies Here
     console.log("Focus is on Program Bar");
     const elementModal = document.querySelector(`#modal-${cls}`);
     console.log(elementModal);
@@ -110,13 +110,9 @@ closeButton.forEach((button) => {
 
     const progList = navBar.querySelectorAll(".nav__program__button"); //creates a NodeList of all the progrma buttons in the nav bar
 
-    console.log(progList); //For Debugging
-    console.log(modal.id); //For Debugging
-
     progList.forEach((program) => {
       if (program.classList.contains(modal.id.substring(6, modal.id.length))) {
         prog = program;
-        //break??
       }
     }); //Loops through the NodeList and if the HTML element in the list contains the modals id in its classList, then the prog variable now is set to that HTML element.
 
@@ -138,7 +134,6 @@ function closeWindow(modal) {
 desktopModal.forEach((modal) => {
   modal.addEventListener("click", () => {
     modal.classList.add("desktop__modal__header--active");
-    // modal.focus();
     console.log("Focus is on Modal");
     const modalProgramBar = document.querySelector(
       `.${modal.id.substring(6, modal.id.length)}`
@@ -160,6 +155,8 @@ desktopModal.forEach((modal) => {
 
 //====DRAGGABLE MODAL FUNCTIONALITY=============================================================
 
+dragElement(document.getElementById("modal-myComputer"));
+dragElement(document.getElementById("modal-fileExplorer"));
 dragElement(document.getElementById("modal-recycleBin"));
 dragElement(document.getElementById("modal-internetExplorer"));
 
@@ -172,10 +169,6 @@ function dragElement(elmnt) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   }
-  // else {
-  //   // otherwise, move the DIV from anywhere inside the DIV:
-  //   // elmnt.onmousedown = dragMouseDown;
-  // }
 
   function dragMouseDown(e) {
     e = e || window.event;
