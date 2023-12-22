@@ -8,7 +8,10 @@
   border-top-color: white;
   border-right-color: white;
   align-items: center;
-  z-index: 6;
+}
+
+nav {
+  z-index: 10000;
 }
 
 .nav__container {
@@ -286,7 +289,7 @@
   border: 2px solid black;
   width: 500px;
   height: 500px;
-  z-index: 5;
+  z-index: 0;
   margin-left: auto;
   margin-right: auto;
   border-top-color: white;
@@ -353,6 +356,7 @@
 
 body {
   background-color: cadetblue;
+  overflow: hidden;
 }
 
 .container {

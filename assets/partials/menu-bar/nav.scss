@@ -8,7 +8,10 @@
   border-top-color: white;
   border-right-color: white;
   align-items: center;
-  z-index: 6;
+}
+
+nav {
+  z-index: 10000;
 }
 
 .nav__container {

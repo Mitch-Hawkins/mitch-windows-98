@@ -57,6 +57,7 @@ function openWindow(window, windowHeader) {
 
   window.classList.add("modal__open"); //make the modal visible
   window.classList.add("desktop__modal__header--active");
+  //add z-index line here??
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
@@ -135,6 +136,7 @@ function closeWindow(modal) {
 desktopModal.forEach((modal) => {
   modal.addEventListener("click", () => {
     modal.classList.add("desktop__modal__header--active");
+    modal.style.zIndex += 1;
     console.log("Focus is on Modal");
     const modalProgramBar = document.querySelector(
       `.${modal.id.substring(6, modal.id.length)}`
@@ -145,6 +147,7 @@ desktopModal.forEach((modal) => {
   });
   modal.addEventListener("blur", () => {
     modal.classList.remove("desktop__modal__header--active");
+    modal.style.zIndex = 0;
     console.log("Focus has left Modal");
     const modalProgramBar = document.querySelector(
       `.${modal.id.substring(6, modal.id.length)}`
@@ -189,6 +192,8 @@ function dragElement(elmnt) {
     // calculate the new cursor position:
     console.log("Mouse Down");
     elmnt.classList.add("desktop__modal__header--active");
+    elmnt.style.zIndex = 1;
+    console.log(elmnt.style.zIndex);
     const elmntProgramBar = document.querySelector(
       `.${elmnt.id.substring(6, elmnt.id.length)}`
     );

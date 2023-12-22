@@ -5,7 +5,6 @@
   // position: fixed;
   // bottom: 30px;
   width: 100%;
-  // z-index: -10;
   // border: 2px solid yellow;
   height: 97.3vh;
   gap: 0px;
@@ -13,7 +12,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // z-index: 2;
     border: 2px solid cadetblue;
     width: 96px;
     padding-top: 30px;
@@ -22,17 +20,9 @@
     &__icon {
       width: 48px;
       height: 48px;
-      // border: 2px solid cadetblue;
-      // &:active {
-      //   border: 2px dotted gray;
-      //   background-color: skyblue;
-      //   z-index: 2;
-      //   mix-blend-mode: overlay;
-      // }
       &--active {
         border: 2px dotted gray;
         background-color: skyblue;
-        // z-index: 2;
         mix-blend-mode: overlay;
       }
     }
@@ -41,7 +31,6 @@
       &--active {
         border: 2px dotted gray;
         background-color: lightblue;
-        // z-index: 2;
         mix-blend-mode: overlay;
       }
     }
@@ -55,7 +44,7 @@
     border: 2px solid black;
     width: 500px;
     height: 500px;
-    z-index: 5;
+    z-index: 0;
     margin-left: auto;
     margin-right: auto;
     border-top-color: white;
@@ -83,9 +72,7 @@
         background-color: lightgray;
         border-top-color: white;
         border-left-color: white;
-        // text-align: center;
         justify-content: center;
-        // align-items: center;
         width: 20px;
         height: 20px;
       }
