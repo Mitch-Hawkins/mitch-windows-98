@@ -8,6 +8,7 @@
   border-top-color: white;
   border-right-color: white;
   align-items: center;
+  z-index: 6;
 }
 
 .nav__container {
@@ -125,7 +126,7 @@
   align-items: center;
   overflow: hidden;
 }
-.nav__program__button:active {
+.nav__program__button--active {
   border-top-color: gray;
   border-left-color: gray;
   border-right-color: white;
@@ -244,7 +245,9 @@
 .desktop {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 97.3vh;
   gap: 0px;
 }
 .desktop__article {
@@ -253,7 +256,7 @@
   align-items: center;
   border: 2px solid cadetblue;
   width: 96px;
-  margin-top: 30px;
+  padding-top: 30px;
   margin-left: 30px;
   gap: 3px;
 }
@@ -276,6 +279,9 @@
 }
 .desktop__modal {
   display: none;
+  position: absolute;
+  left: 500px;
+  top: 300px;
   flex-direction: column;
   border: 2px solid black;
   width: 500px;
@@ -291,9 +297,9 @@
 }
 .desktop__modal__header {
   display: flex;
-  border: 2px solid navy;
-  background-color: navy;
-  width: 98.5%;
+  border: 2px solid gray;
+  background-color: gray;
+  width: 490px;
   height: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -314,12 +320,16 @@
   width: 20px;
   height: 20px;
 }
+.desktop__modal__header--active .desktop__modal__header {
+  border: 2px solid navy;
+  background-color: navy;
+}
 .desktop__modal__content {
   display: flex;
   border: 2px solid black;
   background-color: white;
-  width: 95%;
-  height: 90%;
+  width: 475px;
+  height: 450px;
   margin: auto;
   margin-right: 11px;
 }
