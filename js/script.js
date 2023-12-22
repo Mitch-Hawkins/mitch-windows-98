@@ -90,7 +90,7 @@ function addProgramToBar(cls, programTitle) {
     newElement.classList.remove("nav__program__button--active");
     console.log("Focus has left Program Bar");
     const elementModal = document.querySelector(`#modal-${cls}`);
-    elementModal.classList.remove("desktop__modal__header--active");
+    elementModal.classList.remove("desktop__modal__header--active"); //is the initial drag and drop problemc
   });
 
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
@@ -171,20 +171,21 @@ function dragElement(elmnt) {
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    // elmnt.onmousedown = dragMouseDown;
   }
+  // else {
+  //   // otherwise, move the DIV from anywhere inside the DIV:
+  //   // elmnt.onmousedown = dragMouseDown;
+  // }
 
   function dragMouseDown(e) {
     e = e || window.event;
     // e.preventDefault();
-    console.log(`e:${e}`);
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
+    // document.onmousemove =
     document.onmousemove = elementDrag;
   }
 
@@ -192,6 +193,12 @@ function dragElement(elmnt) {
     e = e || window.event;
     // e.preventDefault();
     // calculate the new cursor position:
+    console.log("Mouse Down");
+    elmnt.classList.add("desktop__modal__header--active");
+    const elmntProgramBar = document.querySelector(
+      `.${elmnt.id.substring(6, elmnt.id.length)}`
+    );
+    elmntProgramBar.classList.add("nav__program__button--active");
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
@@ -203,6 +210,7 @@ function dragElement(elmnt) {
 
   function closeDragElement() {
     // stop moving when mouse button is released:
+    console.log("Mouse Up");
     document.onmouseup = null;
     document.onmousemove = null;
   }
