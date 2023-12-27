@@ -298,6 +298,10 @@ nav {
   border-bottom-color: black;
   background-color: lightgray;
 }
+.desktop__modal--active .desktop__modal__header {
+  border: 2px solid navy;
+  background-color: navy;
+}
 .desktop__modal__header {
   display: flex;
   border: 2px solid gray;
@@ -322,10 +326,6 @@ nav {
   justify-content: center;
   width: 20px;
   height: 20px;
-}
-.desktop__modal__header--active .desktop__modal__header {
-  border: 2px solid navy;
-  background-color: navy;
 }
 .desktop__modal__content {
   display: flex;

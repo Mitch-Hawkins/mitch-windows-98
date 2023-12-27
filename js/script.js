@@ -59,7 +59,7 @@ function openWindow(window, windowHeader) {
   if (window.classList.contains("modal__open")) return;
 
   window.classList.add("modal__open"); //make the modal visible
-  window.classList.add("desktop__modal__header--active");
+  window.classList.add("desktop__modal--active");
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
@@ -87,7 +87,7 @@ function addProgramToBar(cls, programTitle) {
     console.log("Focus is on Program Bar");
     const elementModal = document.querySelector(`#modal-${cls}`);
     console.log(elementModal);
-    elementModal.classList.add("desktop__modal__header--active");
+    elementModal.classList.add("desktop__modal--active");
     elementModal.style.zIndex += 1;
   });
   newElement.addEventListener("blur", () => {
@@ -95,7 +95,7 @@ function addProgramToBar(cls, programTitle) {
     newElement.classList.remove("nav__program__button--active");
     console.log("Focus has left Program Bar");
     const elementModal = document.querySelector(`#modal-${cls}`);
-    elementModal.classList.remove("desktop__modal__header--active"); //is the initial drag and drop problemc
+    elementModal.classList.remove("desktop__modal--active"); //is the initial drag and drop problemc
     elementModal.style.zIndex = 0;
   });
 
@@ -139,7 +139,7 @@ function closeWindow(modal) {
 //====MODAL HEADER FOCUS FUNCTIONALITY==========================================================
 desktopModal.forEach((modal) => {
   modal.addEventListener("click", () => {
-    modal.classList.add("desktop__modal__header--active");
+    modal.classList.add("desktop__modal--active");
     modal.style.zIndex += 1;
     console.log("Focus is on Modal");
     const modalProgramBar = document.querySelector(
@@ -150,7 +150,7 @@ desktopModal.forEach((modal) => {
     }
   });
   modal.addEventListener("blur", () => {
-    modal.classList.remove("desktop__modal__header--active");
+    modal.classList.remove("desktop__modal--active");
     modal.style.zIndex = 0;
     console.log("Focus has left Modal");
     const modalProgramBar = document.querySelector(
@@ -194,7 +194,7 @@ function dragElement(elmnt) {
     // e.preventDefault();
     // calculate the new cursor position:
     console.log("Mouse Down");
-    elmnt.classList.add("desktop__modal__header--active");
+    elmnt.classList.add("desktop__modal--active");
     elmnt.style.zIndex = 1;
     console.log(elmnt.style.zIndex);
     const elmntProgramBar = document.querySelector(

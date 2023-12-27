@@ -52,6 +52,10 @@
     border-right-color: black;
     border-bottom-color: black;
     background-color: lightgray;
+    &--active .desktop__modal__header {
+      border: 2px solid navy;
+      background-color: navy;
+    }
     &__header {
       display: flex;
       border: 2px solid gray;
@@ -78,8 +82,8 @@
       }
       &--active .desktop__modal__header {
         //This is all sorts of fucked, need to redo the whole of the js to get the right fckn class lmao
-        border: 2px solid navy;
-        background-color: navy;
+        // border: 2px solid navy;
+        // background-color: navy;
       }
     }
     &__content {
