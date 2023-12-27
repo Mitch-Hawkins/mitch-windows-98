@@ -165,7 +165,11 @@
                 Page Intro.txt
               </p>
             </article>
-            <article class="desktop__modal__content__article" tabindex="-1">
+            <article
+              class="desktop__modal__content__article"
+              id="sevenNationArmy"
+              tabindex="-1"
+            >
               <img
                 src="./assets/images/icons/large/notepad_file-2.png"
                 class="desktop__modal__content__article__icon"
@@ -200,6 +204,22 @@
         </section>
         <section
           class="desktop__modal desktop__modal--active"
+          id="modal-notepad"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-notepadheader">
+            <p class="desktop__modal__header__text">Notepad</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              tabindex="-1"
+            ></textarea>
+          </div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
           id="modal-pageIntro"
           tabindex="-1"
         >
@@ -221,6 +241,33 @@ Feel free to have a look around all the features and get lost in nostalgia!
 
 Website built by Mitch Hawkins.
             </textarea>
+          </div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
+          id="modal-sevenNationArmy"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-sevenNationArmyheader">
+            <p class="desktop__modal__header__text">Seven Nation Army</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              readonly
+              tabindex="-1"
+            >
+
+            
+          e|-------------------|-------------------|
+          B|-------------------|-------------------|
+          G|-------------------|-------------------| x12
+          D|---------5--------|-------------------|
+          A|-7-----7----7--5-|-3-------2-------|
+          E|-------------------|-------------------|
+          </textarea
+            >
           </div>
         </section>
       </main>
