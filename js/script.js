@@ -259,7 +259,9 @@ dragElement(document.getElementById("modal-myComputer"));
 dragElement(document.getElementById("modal-fileExplorer"));
 dragElement(document.getElementById("modal-recycleBin"));
 dragElement(document.getElementById("modal-internetExplorer"));
+dragElement(document.getElementById("modal-notepad"));
 dragElement(document.getElementById("modal-pageIntro"));
+dragElement(document.getElementById("modal-sevenNationArmy"));
 
 function dragElement(elmnt) {
   var pos1 = 0,
