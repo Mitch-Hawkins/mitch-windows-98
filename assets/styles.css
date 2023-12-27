@@ -342,11 +342,25 @@ nav {
   align-items: center;
   gap: 3px;
   width: 96px;
-  padding-top: 30px;
+  margin-top: 30px;
   margin-left: 30px;
+}
+.desktop__modal__content__article--active {
+  border: 2px dotted gray;
+  background-color: skyblue;
+  height: 96px;
+  mix-blend-mode: multiply;
 }
 .desktop__modal__content__article__text {
   text-align: center;
+}
+.desktop__modal__content__textarea {
+  display: flex;
+  align-items: flex-start;
+  font-size: 24px;
+  text-align: start;
+  width: 100%;
+  resize: none;
 }
 
 .modal__open {

@@ -80,11 +80,6 @@
         width: 20px;
         height: 20px;
       }
-      &--active .desktop__modal__header {
-        //This is all sorts of fucked, need to redo the whole of the js to get the right fckn class lmao
-        // border: 2px solid navy;
-        // background-color: navy;
-      }
     }
     &__content {
       display: flex;
@@ -100,11 +95,25 @@
         align-items: center;
         gap: 3px;
         width: 96px;
-        padding-top: 30px;
+        margin-top: 30px;
         margin-left: 30px;
+        &--active {
+          border: 2px dotted gray;
+          background-color: skyblue;
+          height: 96px;
+          mix-blend-mode: multiply;
+        }
         &__text {
           text-align: center;
         }
+      }
+      &__textarea {
+        display: flex;
+        align-items: flex-start;
+        font-size: 24px;
+        text-align: start;
+        width: 100%;
+        resize: none;
       }
     }
   }

@@ -152,7 +152,11 @@
             <button class="desktop__modal__header__button">X</button>
           </div>
           <div class="desktop__modal__content">
-            <article class="desktop__modal__content__article">
+            <article
+              class="desktop__modal__content__article"
+              id="pageIntro"
+              tabindex="-1"
+            >
               <img
                 src="./assets/images/icons/large/notepad_file-2.png"
                 class="desktop__modal__content__article__icon"
@@ -161,7 +165,7 @@
                 Page Intro.txt
               </p>
             </article>
-            <article class="desktop__modal__content__article">
+            <article class="desktop__modal__content__article" tabindex="-1">
               <img
                 src="./assets/images/icons/large/notepad_file-2.png"
                 class="desktop__modal__content__article__icon"
@@ -196,15 +200,27 @@
         </section>
         <section
           class="desktop__modal desktop__modal--active"
-          id="modal-notepad"
+          id="modal-pageIntro"
           tabindex="-1"
         >
-          <div class="desktop__modal__header" id="modal-notepadheader">
-            <p class="desktop__modal__header__text">Notepad</p>
+          <div class="desktop__modal__header" id="modal-pageIntroheader">
+            <p class="desktop__modal__header__text">Page Intro</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
           <div class="desktop__modal__content">
-            <input type="text" />
+            <textarea
+              class="desktop__modal__content__textarea"
+              readonly
+              tabindex="-1"
+            >
+Welcome!
+
+This page is a mock recreation of the Windows 98 Operating system using HTML, SCSS and Javascript!
+
+Feel free to have a look around all the features and get lost in nostalgia!
+
+Website built by Mitch Hawkins.
+            </textarea>
           </div>
         </section>
       </main>
