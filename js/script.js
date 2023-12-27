@@ -1,6 +1,8 @@
 //====DEFINING GLOBAL VARIABLES====================================================================
 
 const startButton = document.querySelector("#startButton");
+const startMenu = document.querySelector("#startMenu");
+const startMenuArticle = document.querySelectorAll(".start__menu__article");
 const shortcutArticle = document.querySelectorAll(".desktop__article");
 const modalShortcutArticle = document.querySelectorAll(
   ".desktop__modal__content__article"
@@ -20,25 +22,46 @@ const textArea = document.querySelectorAll(
 //====START MENU FUNCTIONALITY=====================================================================
 
 startButton.addEventListener("click", () => {
-  const startMenu = document.querySelector("#startMenu");
-  toggleStart(startMenu);
+  // const startMenu = document.querySelector("#startMenu");
+  toggleStart();
 });
 
-startButton.addEventListener("blur", () => {
-  const startMenu = document.querySelector("#startMenu");
-  removeStart(startMenu);
+startMenuArticle.forEach((article) => {
+  article.addEventListener("click", () => {
+    const window = document.querySelector(
+      `#modal-${article.id.substring(6, article.id.length)}`
+    );
+    console.log(window);
+    openWindow(window);
+  });
 });
 
-function toggleStart(startMenu) {
+// startButton.addEventListener("blur", () => {
+//   removeStart();
+// });
+
+startMenu.addEventListener("blur", () => {
+  // const startMenu = document.querySelector("#startMenu");
+  console.log(startMenu);
+  removeStart();
+});
+
+function toggleStart() {
+  //maybe replace this with simple add and remove, toggle might have a special featuree interrupting the blur
   if (startMenu == null) return;
   startMenu.classList.toggle("start__active");
   startButton.classList.toggle("nav__start__active");
+  if (startMenu.classList.contains("start__active")) {
+    startMenu.focus();
+    console.log("wooP");
+  }
 }
 
-function removeStart(startMenu) {
+function removeStart() {
   if (startMenu == null) return;
   startMenu.classList.remove("start__active");
   startButton.classList.remove("nav__start__active");
+  console.log("WTF");
 }
 
 //====OPEN MODAL FUNCTIONALITY====================================================================
@@ -95,7 +118,7 @@ modalShortcutArticle.forEach((icon) => {
   });
 });
 
-function openWindow(window, windowHeader) {
+function openWindow(window /*, windowHeader*/) {
   if (window == null) return;
   if (window.classList.contains("modal__open")) return;
 
