@@ -86,6 +86,7 @@ function addProgramToBar(cls, programTitle) {
     const elementModal = document.querySelector(`#modal-${cls}`);
     console.log(elementModal);
     elementModal.classList.add("desktop__modal__header--active");
+    elementModal.style.zIndex += 1;
   });
   newElement.addEventListener("blur", () => {
     if (newElement == null) return;
@@ -93,6 +94,7 @@ function addProgramToBar(cls, programTitle) {
     console.log("Focus has left Program Bar");
     const elementModal = document.querySelector(`#modal-${cls}`);
     elementModal.classList.remove("desktop__modal__header--active"); //is the initial drag and drop problemc
+    elementModal.style.zIndex = 0;
   });
 
   newElement.appendChild(newText); //puts the newly created text inbetween the new buttons html tags
