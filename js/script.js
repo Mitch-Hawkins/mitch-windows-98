@@ -2,6 +2,9 @@
 
 const startButton = document.querySelector("#startButton");
 const shortcutArticle = document.querySelectorAll(".desktop__article");
+const modalShortcutArticle = document.querySelectorAll(
+  ".desktop__modal__content__article"
+);
 const closeButton = document.querySelectorAll(
   ".desktop__modal__header__button"
 );
@@ -57,7 +60,6 @@ function openWindow(window, windowHeader) {
 
   window.classList.add("modal__open"); //make the modal visible
   window.classList.add("desktop__modal__header--active");
-  //add z-index line here??
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
@@ -184,7 +186,6 @@ function dragElement(elmnt) {
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
-    // document.onmousemove =
     document.onmousemove = elementDrag;
   }
 
