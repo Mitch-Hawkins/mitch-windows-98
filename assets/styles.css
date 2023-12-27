@@ -298,6 +298,10 @@ nav {
   border-bottom-color: black;
   background-color: lightgray;
 }
+.desktop__modal--active .desktop__modal__header {
+  border: 2px solid navy;
+  background-color: navy;
+}
 .desktop__modal__header {
   display: flex;
   border: 2px solid gray;
@@ -323,10 +327,6 @@ nav {
   width: 20px;
   height: 20px;
 }
-.desktop__modal__header--active .desktop__modal__header {
-  border: 2px solid navy;
-  background-color: navy;
-}
 .desktop__modal__content {
   display: flex;
   border: 2px solid black;
@@ -335,6 +335,32 @@ nav {
   height: 450px;
   margin: auto;
   margin-right: 11px;
+}
+.desktop__modal__content__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 96px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.desktop__modal__content__article--active {
+  border: 2px dotted gray;
+  background-color: skyblue;
+  height: 96px;
+  mix-blend-mode: multiply;
+}
+.desktop__modal__content__article__text {
+  text-align: center;
+}
+.desktop__modal__content__textarea {
+  display: flex;
+  align-items: flex-start;
+  font-size: 24px;
+  text-align: start;
+  width: 100%;
+  resize: none;
 }
 
 .modal__open {

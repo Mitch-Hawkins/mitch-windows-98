@@ -132,7 +132,7 @@
           <p class="desktop__article__text">Internet Explorer</p>
         </article>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-myComputer"
           tabindex="-1"
         >
@@ -143,7 +143,7 @@
           <div class="desktop__modal__content"></div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-fileExplorer"
           tabindex="-1"
         >
@@ -151,10 +151,33 @@
             <p class="desktop__modal__header__text">File Explorer</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article"
+              id="pageIntro"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/notepad_file-2.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Page Intro.txt
+              </p>
+            </article>
+            <article class="desktop__modal__content__article" tabindex="-1">
+              <img
+                src="./assets/images/icons/large/notepad_file-2.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Seven Nation Army.txt
+              </p>
+            </article>
+          </div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-recycleBin"
           tabindex="-1"
         >
@@ -165,7 +188,7 @@
           <div class="desktop__modal__content"></div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-internetExplorer"
           tabindex="-1"
         >
@@ -174,6 +197,31 @@
             <button class="desktop__modal__header__button">X</button>
           </div>
           <div class="desktop__modal__content"></div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
+          id="modal-pageIntro"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-pageIntroheader">
+            <p class="desktop__modal__header__text">Page Intro</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              readonly
+              tabindex="-1"
+            >
+Welcome!
+
+This page is a mock recreation of the Windows 98 Operating system using HTML, SCSS and Javascript!
+
+Feel free to have a look around all the features and get lost in nostalgia!
+
+Website built by Mitch Hawkins.
+            </textarea>
+          </div>
         </section>
       </main>
     </section>
