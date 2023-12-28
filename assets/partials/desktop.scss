@@ -52,6 +52,10 @@
     border-right-color: black;
     border-bottom-color: black;
     background-color: lightgray;
+    &--active .desktop__modal__header {
+      border: 2px solid navy;
+      background-color: navy;
+    }
     &__header {
       display: flex;
       border: 2px solid gray;
@@ -76,11 +80,6 @@
         width: 20px;
         height: 20px;
       }
-      &--active .desktop__modal__header {
-        //This is all sorts of fucked, need to redo the whole of the js to get the right fckn class lmao
-        border: 2px solid navy;
-        background-color: navy;
-      }
     }
     &__content {
       display: flex;
@@ -90,6 +89,41 @@
       height: 450px;
       margin: auto;
       margin-right: 11px;
+      &__article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        width: 96px;
+        margin-top: 30px;
+        margin-left: 30px;
+        &--active {
+          border: 2px dotted gray;
+          background-color: skyblue;
+          height: 96px;
+          mix-blend-mode: multiply;
+        }
+        &--theme {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3px;
+          width: 96px;
+          margin-top: 30px;
+          margin-left: 30px;
+        }
+        &__text {
+          text-align: center;
+        }
+      }
+      &__textarea {
+        display: flex;
+        align-items: flex-start;
+        font-size: 24px;
+        text-align: start;
+        width: 100%;
+        resize: none;
+      }
     }
   }
 }

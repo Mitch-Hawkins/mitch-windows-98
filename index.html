@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./js/script.js" defer></script>
   </head>
-  <body>
+  <body id="body">
     <section class="container">
       <nav>
-        <div class="start" id="startMenu">
+        <div class="start" id="startMenu" tabindex="-1">
           <div class="start__banner">
             <h2 class="start__banner__text">Windows 98</h2>
           </div>
           <div class="start__menu">
             <div class="start__menu__programs">
-              <article class="start__menu__article">
+              <article class="start__menu__article" id="start-myComputer">
                 <img
                   src="./assets/images/icons/large/computer_explorer-5.png"
                   class="start__menu__article__icon"
                 />
                 <p class="start__menu__article__text">My Computer</p>
               </article>
-              <article class="start__menu__article">
+              <article class="start__menu__article" id="start-fileExplorer">
                 <img
                   src="./assets/images/icons/large/directory_open_file_mydocs-4.png"
                   class="start__menu__article__icon"
                 />
                 <p class="start__menu__article__text">File Explorer</p>
               </article>
-              <article class="start__menu__article">
+              <article class="start__menu__article" id="start-notepad">
                 <img
                   src="./assets/images/icons/large/notepad_file-2.png"
                   class="start__menu__article__icon"
@@ -72,18 +72,18 @@
             <div class="divider__line2"></div>
           </div>
           <section class="nav__container" id="taskbar">
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-fileExplorer">
               <img
                 src="./assets/images/icons/small/directory_open_file_mydocs-3.png"
               />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-myComputer">
               <img src="./assets/images/icons/small/computer_explorer-0.png" />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-internetExplorer">
               <img src="./assets/images/icons/small/msie1-4.png" />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-notepad">
               <img src="./assets/images/icons/small/notepad_file-1.png" />
             </button>
           </section>
@@ -97,7 +97,7 @@
           </section>
           <section class="nav__container" id="date-time">
             <div class="nav__datetime">
-              <p>18/12/2023 12:51 PM</p>
+              <p id="clock"><!--18/12/2023 12:51 PM--></p>
             </div>
           </section>
         </div>
@@ -132,7 +132,7 @@
           <p class="desktop__article__text">Internet Explorer</p>
         </article>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-myComputer"
           tabindex="-1"
         >
@@ -140,10 +140,50 @@
             <p class="desktop__modal__header__text">My Computer</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article--theme"
+              id="normalTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Normal Theme.bg
+              </p>
+            </article>
+            <article
+              class="desktop__modal__content__article--theme"
+              id="spaceTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Space Theme.bg
+              </p>
+            </article>
+            <article
+              class="desktop__modal__content__article--theme"
+              id="underwaterTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Underwater Theme.bg
+              </p>
+            </article>
+          </div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-fileExplorer"
           tabindex="-1"
         >
@@ -151,10 +191,37 @@
             <p class="desktop__modal__header__text">File Explorer</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article"
+              id="pageIntro"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/notepad_file-2.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Page Intro.txt
+              </p>
+            </article>
+            <article
+              class="desktop__modal__content__article"
+              id="sevenNationArmy"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/notepad_file-2.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Seven Nation Army.txt
+              </p>
+            </article>
+          </div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-recycleBin"
           tabindex="-1"
         >
@@ -162,10 +229,22 @@
             <p class="desktop__modal__header__text">Recycle Bin</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article"
+              id="sys32"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/console_prompt-0.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">sys32.bin</p>
+            </article>
+          </div>
         </section>
         <section
-          class="desktop__modal desktop__modal__header--active"
+          class="desktop__modal desktop__modal--active"
           id="modal-internetExplorer"
           tabindex="-1"
         >
@@ -174,6 +253,74 @@
             <button class="desktop__modal__header__button">X</button>
           </div>
           <div class="desktop__modal__content"></div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
+          id="modal-notepad"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-notepadheader">
+            <p class="desktop__modal__header__text">Notepad</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              tabindex="-1"
+            ></textarea>
+          </div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
+          id="modal-pageIntro"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-pageIntroheader">
+            <p class="desktop__modal__header__text">Page Intro</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              readonly
+              tabindex="-1"
+            >
+Welcome!
+
+This page is a mock recreation of the Windows 98 Operating system using HTML, SCSS and Javascript!
+
+Feel free to have a look around all the features and get lost in nostalgia!
+
+Website built by Mitch Hawkins.
+            </textarea>
+          </div>
+        </section>
+        <section
+          class="desktop__modal desktop__modal--active"
+          id="modal-sevenNationArmy"
+          tabindex="-1"
+        >
+          <div class="desktop__modal__header" id="modal-sevenNationArmyheader">
+            <p class="desktop__modal__header__text">Seven Nation Army</p>
+            <button class="desktop__modal__header__button">X</button>
+          </div>
+          <div class="desktop__modal__content">
+            <textarea
+              class="desktop__modal__content__textarea"
+              readonly
+              tabindex="-1"
+            >
+
+            
+          e|-------------------|-------------------|
+          B|-------------------|-------------------|
+          G|-------------------|-------------------| x12
+          D|---------5--------|-------------------|
+          A|-7-----7----7--5-|-3-------2-------|
+          E|-------------------|-------------------|
+          </textarea
+            >
+          </div>
         </section>
       </main>
     </section>
