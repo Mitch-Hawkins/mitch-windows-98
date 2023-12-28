@@ -1,23 +1,29 @@
 //====DEFINING GLOBAL VARIABLES====================================================================
 
-const startButton = document.querySelector("#startButton");
-const startMenu = document.querySelector("#startMenu");
-const startMenuArticle = document.querySelectorAll(".start__menu__article");
-const shortcutArticle = document.querySelectorAll(".desktop__article");
+const backgroundTheme = document.querySelector("#body"); //Body Element
+
+const startButton = document.querySelector("#startButton"); //Start Button element on the nav bar
+const startMenu = document.querySelector("#startMenu"); //Start menu modal element opened from the start button
+const startMenuArticle = document.querySelectorAll(".start__menu__article"); //List of all buttons in the start menu modal
+const shortcutArticle = document.querySelectorAll(".desktop__article"); //List of all desktop icons
 const modalShortcutArticle = document.querySelectorAll(
   ".desktop__modal__content__article"
-);
+); //List of all icons within modal windows
 const closeButton = document.querySelectorAll(
   ".desktop__modal__header__button"
-);
-const navBar = document.querySelector("#program-bar");
+); //List of all close buttons within the modal headers
+const modalShortcutArticleTheme = document.querySelectorAll(
+  ".desktop__modal__content__article--theme"
+); //List of all icons within modal windows that change theme instead of opening other modals
+const navBar = document.querySelector("#program-bar"); //The program bar section of the nav element
+const taskbarIcon = document.querySelectorAll(".nav__icon"); //List of all the taskbar icons in the nav element
 
-const desktopModal = document.querySelectorAll(".desktop__modal");
-const desktopModalHeader = document.querySelectorAll(".desktop__modal__header");
+const desktopModal = document.querySelectorAll(".desktop__modal"); //List of all pre styled modals
+const desktopModalHeader = document.querySelectorAll(".desktop__modal__header"); //List of all headers from modals
 
 const textArea = document.querySelectorAll(
   ".desktop__modal__content__textarea"
-);
+); //List of all textarea elements used in the content of modals
 
 //====START MENU FUNCTIONALITY=====================================================================
 
@@ -63,6 +69,17 @@ function removeStart() {
   startButton.classList.remove("nav__start__active");
   console.log("WTF");
 }
+
+//====TASKBAR BUTTON FUNCTIONALITY================================================================
+
+taskbarIcon.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const window = document.querySelector(
+      `#modal-${icon.id.substring(6, icon.id.length)}`
+    );
+    openWindow(window);
+  });
+});
 
 //====OPEN MODAL FUNCTIONALITY====================================================================
 
@@ -250,6 +267,56 @@ textArea.forEach((textbox) => {
       `.${parentWindow.id.substring(6, parentWindow.id.length)}`
     );
     modalProgramBar.classList.remove("nav__program__button--active");
+  });
+});
+
+//====THEME FUNCTIONALITY=======================================================================
+
+modalShortcutArticleTheme.forEach((theme) => {
+  theme.addEventListener("click", () => {
+    const parentWindow = theme.closest(".desktop__modal");
+    parentWindow.classList.add("desktop__modal--active");
+    theme.classList.add("desktop__modal__content__article--active");
+    desktopModal.forEach((modal) => {
+      modal.style.zIndex = 0;
+    });
+    parentWindow.style.zIndex = 1;
+    const modalProgramBar = document.querySelector(
+      `.${parentWindow.id.substring(6, parentWindow.id.length)}`
+    );
+    if (modalProgramBar != null) {
+      modalProgramBar.classList.add("nav__program__button--active");
+    }
+  });
+  theme.addEventListener("blur", () => {
+    const parentWindow = theme.closest(".desktop__modal");
+    parentWindow.classList.remove("desktop__modal--active");
+    theme.classList.remove("desktop__modal__content__article--active");
+    const modalProgramBar = document.querySelector(
+      `.${parentWindow.id.substring(6, parentWindow.id.length)}`
+    );
+    modalProgramBar.classList.remove("nav__program__button--active");
+  });
+
+  theme.addEventListener("dblclick", () => {
+    switch (theme.id) {
+      case "normalTheme":
+        backgroundTheme.style.backgroundColor = "cadetblue";
+        backgroundTheme.style.backgroundImage = "none";
+        break;
+      case "spaceTheme":
+        backgroundTheme.style.backgroundColor = "none";
+        backgroundTheme.style.backgroundImage =
+          "url(../assets/images/wallpapers/download.jpeg)";
+        backgroundTheme.style.backgroundSize = "cover"; //HAHAHAHAHAHAHAHAHA
+        break;
+      case "underwaterTheme":
+        backgroundTheme.style.backgroundColor = "none";
+        backgroundTheme.style.backgroundImage =
+          "url(../assets/images/wallpapers/mknRDAU.jpeg)";
+        break;
+    }
+    theme.classList.remove("desktop__modal__content__article--active");
   });
 });
 

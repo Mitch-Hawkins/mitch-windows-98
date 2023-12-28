@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./js/script.js" defer></script>
   </head>
-  <body>
+  <body id="body">
     <section class="container">
       <nav>
         <div class="start" id="startMenu" tabindex="-1">
@@ -72,18 +72,18 @@
             <div class="divider__line2"></div>
           </div>
           <section class="nav__container" id="taskbar">
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-fileExplorer">
               <img
                 src="./assets/images/icons/small/directory_open_file_mydocs-3.png"
               />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-myComputer">
               <img src="./assets/images/icons/small/computer_explorer-0.png" />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-internetExplorer">
               <img src="./assets/images/icons/small/msie1-4.png" />
             </button>
-            <button class="nav__icon">
+            <button class="nav__icon" id="taskb-notepad">
               <img src="./assets/images/icons/small/notepad_file-1.png" />
             </button>
           </section>
@@ -140,7 +140,47 @@
             <p class="desktop__modal__header__text">My Computer</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article--theme"
+              id="normalTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Normal Theme.bg
+              </p>
+            </article>
+            <article
+              class="desktop__modal__content__article--theme"
+              id="spaceTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Space Theme.bg
+              </p>
+            </article>
+            <article
+              class="desktop__modal__content__article--theme"
+              id="underwaterTheme"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/themes-4.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">
+                Underwater Theme.bg
+              </p>
+            </article>
+          </div>
         </section>
         <section
           class="desktop__modal desktop__modal--active"
@@ -189,7 +229,19 @@
             <p class="desktop__modal__header__text">Recycle Bin</p>
             <button class="desktop__modal__header__button">X</button>
           </div>
-          <div class="desktop__modal__content"></div>
+          <div class="desktop__modal__content">
+            <article
+              class="desktop__modal__content__article"
+              id="sys32"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/images/icons/large/console_prompt-0.png"
+                class="desktop__modal__content__article__icon"
+              />
+              <p class="desktop__modal__content__article__text">sys32.bin</p>
+            </article>
+          </div>
         </section>
         <section
           class="desktop__modal desktop__modal--active"
