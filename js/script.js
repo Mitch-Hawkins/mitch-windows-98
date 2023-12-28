@@ -25,6 +25,18 @@ const textArea = document.querySelectorAll(
   ".desktop__modal__content__textarea"
 ); //List of all textarea elements used in the content of modals
 
+//====CLOCK FUNCTIONALITY==========================================================================
+
+let clockElement = document.querySelector("#clock");
+
+function updateClock(clock) {
+  clock.innerHTML = new Date().toLocaleTimeString();
+}
+
+setInterval(function () {
+  updateClock(clockElement);
+}, 1000);
+
 //====START MENU FUNCTIONALITY=====================================================================
 
 startButton.addEventListener("click", () => {
