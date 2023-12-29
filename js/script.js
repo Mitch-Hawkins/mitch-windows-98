@@ -98,15 +98,18 @@ taskbarIcon.forEach((icon) => {
 shortcutArticle.forEach((icon) => {
   icon.addEventListener("click", () => {
     icon.classList.add("desktop__article__icon--active");
+    // icon.classList.add("desktop__article__text--active");
   });
   icon.addEventListener("blur", () => {
     icon.classList.remove("desktop__article__icon--active");
+    // icon.classList.remove("desktop__article__text--active");
   });
   icon.addEventListener("dblclick", () => {
     const window = document.querySelector(`#modal-${icon.id}`);
     const windowHeader = document.querySelector(`#modal-${icon.id}header`);
     openWindow(window, windowHeader);
     icon.classList.remove("desktop__article__icon--active");
+    // icon.classList.remove("desktop__article__text--active");
   });
 });
 
@@ -319,13 +322,13 @@ modalShortcutArticleTheme.forEach((theme) => {
       case "spaceTheme":
         backgroundTheme.style.backgroundColor = "none";
         backgroundTheme.style.backgroundImage =
-          "url(../assets/images/wallpapers/download.jpeg)";
+          "url(assets/images/wallpapers/download.jpeg)";
         backgroundTheme.style.backgroundSize = "cover"; //HAHAHAHAHAHAHAHAHA
         break;
       case "underwaterTheme":
         backgroundTheme.style.backgroundColor = "none";
         backgroundTheme.style.backgroundImage =
-          "url(../assets/images/wallpapers/mknRDAU.jpeg)";
+          "url(assets/images/wallpapers/mknRDAU.jpeg)";
         break;
     }
     theme.classList.remove("desktop__modal__content__article--active");
