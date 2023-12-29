@@ -156,6 +156,10 @@ function openWindow(window /*, windowHeader*/) {
 
   window.classList.add("modal__open"); //make the modal visible
   window.classList.add("desktop__modal--active");
+
+  window.style.top = `${Math.floor(Math.random() * (500 - 300) + 300)}px`;
+  window.style.left = `${Math.floor(Math.random() * (500 - 300) + 300)}px`;
+
   str = window.id
     .substring(6, window.id.length)
     .split(/(?=[A-Z])/)
@@ -323,7 +327,7 @@ modalShortcutArticleTheme.forEach((theme) => {
         backgroundTheme.style.backgroundColor = "none";
         backgroundTheme.style.backgroundImage =
           "url(assets/images/wallpapers/download.jpeg)";
-        backgroundTheme.style.backgroundSize = "cover"; //HAHAHAHAHAHAHAHAHA
+        backgroundTheme.style.backgroundSize = "cover";
         break;
       case "underwaterTheme":
         backgroundTheme.style.backgroundColor = "none";
