@@ -13,7 +13,7 @@ const closeButton = document.querySelectorAll(
   ".desktop__modal__header__button"
 ); //List of all close buttons within the modal headers
 const modalShortcutArticleTheme = document.querySelectorAll(
-  ".desktop__modal__content__article--theme"
+  ".desktop__modal__content__theme"
 ); //List of all icons within modal windows that change theme instead of opening other modals
 const navBar = document.querySelector("#program-bar"); //The program bar section of the nav element
 const taskbarIcon = document.querySelectorAll(".nav__icon"); //List of all the taskbar icons in the nav element
@@ -291,7 +291,7 @@ modalShortcutArticleTheme.forEach((theme) => {
   theme.addEventListener("click", () => {
     const parentWindow = theme.closest(".desktop__modal");
     parentWindow.classList.add("desktop__modal--active");
-    theme.classList.add("desktop__modal__content__article--active");
+    theme.classList.add("desktop__modal__content__theme--active");
     desktopModal.forEach((modal) => {
       modal.style.zIndex = 0;
     });
@@ -306,7 +306,7 @@ modalShortcutArticleTheme.forEach((theme) => {
   theme.addEventListener("blur", () => {
     const parentWindow = theme.closest(".desktop__modal");
     parentWindow.classList.remove("desktop__modal--active");
-    theme.classList.remove("desktop__modal__content__article--active");
+    theme.classList.remove("desktop__modal__content__theme--active");
     const modalProgramBar = document.querySelector(
       `.${parentWindow.id.substring(6, parentWindow.id.length)}`
     );
@@ -331,7 +331,7 @@ modalShortcutArticleTheme.forEach((theme) => {
           "url(assets/images/wallpapers/mknRDAU.jpeg)";
         break;
     }
-    theme.classList.remove("desktop__modal__content__article--active");
+    theme.classList.remove("desktop__modal__content__theme--active");
   });
 });
 
