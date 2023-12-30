@@ -382,6 +382,113 @@ nav {
   display: flex;
 }
 
+.desktop__modal__content__google {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.google__header {
+  display: flex;
+  justify-content: center;
+}
+.google__searchbox {
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  flex-direction: column;
+  height: 137px;
+}
+.google__searchbox__textinput {
+  width: 60%;
+}
+.google__searchbox__button {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 120px;
+  background-color: rgb(172, 172, 172);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
+}
+.google__searchbox__button:active {
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
+}
+.google__searchbox__button--subscribe {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 60px;
+  background-color: rgb(172, 172, 172);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
+}
+.google__searchbox__button--subscribe:active {
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
+}
+.google__links {
+  display: flex;
+  height: 137px;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 2px;
+}
+.google__links__specialsearches {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background-color: turquoise;
+  align-items: center;
+  justify-content: center;
+}
+.google__links__specialsearches a:visited {
+  color: blue;
+}
+.google__links__help {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: rgb(51, 185, 172);
+  align-items: center;
+  justify-content: center;
+}
+.google__links__help a:visited {
+  color: blue;
+}
+.google__links__mailinglist {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  width: 35%;
+  background-color: cadetblue;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.google__links__mailinglist a:visited {
+  color: blue;
+}
+.google__footer {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
 @font-face {
   font-family: "Windows";
   src: url("fonts/subset-Windows.woff2") format("woff2"), url("fonts/subset-Windows.woff") format("woff");
