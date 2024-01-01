@@ -40,7 +40,6 @@ setInterval(function () {
 //====START MENU FUNCTIONALITY=====================================================================
 
 startButton.addEventListener("click", () => {
-  // const startMenu = document.querySelector("#startMenu");
   toggleStart();
 });
 
@@ -54,18 +53,12 @@ startMenuArticle.forEach((article) => {
   });
 });
 
-// startButton.addEventListener("blur", () => {
-//   removeStart();
-// });
-
 startMenu.addEventListener("blur", () => {
-  // const startMenu = document.querySelector("#startMenu");
   console.log(startMenu);
   removeStart();
 });
 
 function toggleStart() {
-  //maybe replace this with simple add and remove, toggle might have a special featuree interrupting the blur
   if (startMenu == null) return;
   startMenu.classList.toggle("start__active");
   startButton.classList.toggle("nav__start__active");
@@ -98,18 +91,15 @@ taskbarIcon.forEach((icon) => {
 shortcutArticle.forEach((icon) => {
   icon.addEventListener("click", () => {
     icon.classList.add("desktop__article__icon--active");
-    // icon.classList.add("desktop__article__text--active");
   });
   icon.addEventListener("blur", () => {
     icon.classList.remove("desktop__article__icon--active");
-    // icon.classList.remove("desktop__article__text--active");
   });
   icon.addEventListener("dblclick", () => {
     const window = document.querySelector(`#modal-${icon.id}`);
     const windowHeader = document.querySelector(`#modal-${icon.id}header`);
     openWindow(window, windowHeader);
     icon.classList.remove("desktop__article__icon--active");
-    // icon.classList.remove("desktop__article__text--active");
   });
 });
 
@@ -144,13 +134,13 @@ modalShortcutArticle.forEach((icon) => {
     const window = document.querySelector(`#modal-${icon.id}`);
     const windowHeader = document.querySelector(`#modal-${icon.id}header`);
     const parentWindow = icon.closest(".desktop__modal");
-    openWindow(window, windowHeader);
+    openWindow(window);
     icon.classList.remove("desktop__modal__content__article--active");
     parentWindow.classList.remove("desktop__modal--active");
   });
 });
 
-function openWindow(window /*, windowHeader*/) {
+function openWindow(window) {
   if (window == null) return;
   if (window.classList.contains("modal__open")) return;
 
@@ -166,7 +156,6 @@ function openWindow(window /*, windowHeader*/) {
     .join(" "); //takes the id tag of the modal, removes the "modal-" from it, splits into words via camel casing reg ex, and formats it with Capital first letters to be displayed as a title (eg: modal-recycleBin -> recycle, Bin, recycle Bin)
   programTitle = str[0].toUpperCase() + str.slice(1); //makes first letter capital
   addProgramToBar(window.id.substring(6, window.id.length), programTitle);
-  console.log(window.id); //for Debugging
 }
 
 function addProgramToBar(cls, programTitle) {
@@ -203,7 +192,6 @@ function addProgramToBar(cls, programTitle) {
   parentNode.appendChild(newElement); //creates the new button as a child of the navBar element
 
   newElement.click(); //Why Did I need...
-  // console.log(newElement);
 }
 
 //====CLOSE MODAL FUNCTIONALITY=================================================================
@@ -254,14 +242,12 @@ desktopModal.forEach((modal) => {
   });
   modal.addEventListener("blur", () => {
     modal.classList.remove("desktop__modal--active");
-    // modal.style.zIndex = 0;
     console.log("Focus has left Modal");
     const modalProgramBar = document.querySelector(
       `.${modal.id.substring(6, modal.id.length)}`
     );
     modalProgramBar.classList.remove("nav__program__button--active");
   });
-  // modal.click();
 });
 
 textArea.forEach((textbox) => {
@@ -361,7 +347,6 @@ function dragElement(elmnt) {
 
   function dragMouseDown(e) {
     e = e || window.event;
-    // e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
@@ -372,12 +357,9 @@ function dragElement(elmnt) {
 
   function elementDrag(e) {
     e = e || window.event;
-    // e.preventDefault();
     // calculate the new cursor position:
-    // console.log("Mouse Down");
     elmnt.classList.add("desktop__modal--active");
     elmnt.style.zIndex = 1;
-    // console.log(elmnt.style.zIndex);
     const elmntProgramBar = document.querySelector(
       `.${elmnt.id.substring(6, elmnt.id.length)}`
     );
@@ -393,7 +375,6 @@ function dragElement(elmnt) {
 
   function closeDragElement() {
     // stop moving when mouse button is released:
-    // console.log("Mouse Up");
     document.onmouseup = null;
     document.onmousemove = null;
   }
