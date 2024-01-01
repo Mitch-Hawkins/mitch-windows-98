@@ -494,7 +494,7 @@ nav {
   src: url("../fonts/subset-Windows.woff2") format("woff2"), url("../fonts/subset-Windows.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 * {
   margin: 0px;
