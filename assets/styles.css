@@ -257,7 +257,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid cadetblue;
+  border: 2px solid rgba(0, 0, 0, 0);
   width: 96px;
   padding-top: 30px;
   margin-left: 30px;
@@ -269,16 +269,14 @@ nav {
 }
 .desktop__article__icon--active {
   border: 2px dotted gray;
-  background-color: skyblue;
-  mix-blend-mode: overlay;
+  background-color: rgba(135, 207, 235, 0.507);
 }
 .desktop__article__text {
   color: white;
 }
 .desktop__article__text--active {
   border: 2px dotted gray;
-  background-color: lightblue;
-  mix-blend-mode: overlay;
+  background-color: rgba(173, 216, 230, 0.507);
 }
 .desktop__modal {
   display: none;
@@ -339,29 +337,37 @@ nav {
 .desktop__modal__content__article {
   display: flex;
   flex-direction: column;
+  border: 2px solid rgba(0, 0, 0, 0);
   align-items: center;
   gap: 3px;
   width: 96px;
+  height: 96px;
   margin-top: 30px;
   margin-left: 30px;
 }
 .desktop__modal__content__article--active {
   border: 2px dotted gray;
-  background-color: skyblue;
+  background-color: rgba(135, 207, 235, 0.507);
   height: 96px;
-  mix-blend-mode: multiply;
-}
-.desktop__modal__content__article--theme {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  width: 96px;
-  margin-top: 30px;
-  margin-left: 30px;
 }
 .desktop__modal__content__article__text {
   text-align: center;
+}
+.desktop__modal__content__theme {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted rgba(0, 0, 0, 0);
+  align-items: center;
+  gap: 3px;
+  width: 96px;
+  height: 96px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.desktop__modal__content__theme--active {
+  border: 2px dotted gray;
+  background-color: rgba(135, 207, 235, 0.507);
+  height: 96px;
 }
 .desktop__modal__content__textarea {
   display: flex;
@@ -374,6 +380,113 @@ nav {
 
 .modal__open {
   display: flex;
+}
+
+.desktop__modal__content__google {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.google__header {
+  display: flex;
+  justify-content: center;
+}
+.google__searchbox {
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  flex-direction: column;
+  height: 137px;
+}
+.google__searchbox__textinput {
+  width: 60%;
+}
+.google__searchbox__button {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 120px;
+  background-color: rgb(172, 172, 172);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
+}
+.google__searchbox__button:active {
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
+}
+.google__searchbox__button--subscribe {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 60px;
+  background-color: rgb(172, 172, 172);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
+}
+.google__searchbox__button--subscribe:active {
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
+}
+.google__links {
+  display: flex;
+  height: 137px;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 2px;
+}
+.google__links__specialsearches {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background-color: turquoise;
+  align-items: center;
+  justify-content: center;
+}
+.google__links__specialsearches a:visited {
+  color: blue;
+}
+.google__links__help {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: rgb(51, 185, 172);
+  align-items: center;
+  justify-content: center;
+}
+.google__links__help a:visited {
+  color: blue;
+}
+.google__links__mailinglist {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  width: 35%;
+  background-color: cadetblue;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.google__links__mailinglist a:visited {
+  color: blue;
+}
+.google__footer {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
@@ -392,6 +505,8 @@ nav {
 body {
   background-color: cadetblue;
   background-image: none;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
 }
 

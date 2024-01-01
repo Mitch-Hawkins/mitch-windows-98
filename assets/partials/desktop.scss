@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  // position: fixed;
-  // bottom: 30px;
   width: 100%;
   // border: 2px solid yellow;
   height: 97.3vh;
@@ -12,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid cadetblue;
+    border: 2px solid rgba(0, 0, 0, 0);
     width: 96px;
     padding-top: 30px;
     margin-left: 30px;
@@ -22,16 +20,14 @@
       height: 48px;
       &--active {
         border: 2px dotted gray;
-        background-color: skyblue;
-        mix-blend-mode: overlay;
+        background-color: rgba(135, 207, 235, 0.507);
       }
     }
     &__text {
       color: white;
       &--active {
         border: 2px dotted gray;
-        background-color: lightblue;
-        mix-blend-mode: overlay;
+        background-color: rgba(173, 216, 230, 0.507);
       }
     }
   }
@@ -92,28 +88,36 @@
       &__article {
         display: flex;
         flex-direction: column;
+        border: 2px solid rgba(0, 0, 0, 0);
         align-items: center;
         gap: 3px;
         width: 96px;
+        height: 96px;
         margin-top: 30px;
         margin-left: 30px;
         &--active {
           border: 2px dotted gray;
-          background-color: skyblue;
+          background-color: rgba(135, 207, 235, 0.507);
           height: 96px;
-          mix-blend-mode: multiply;
-        }
-        &--theme {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 3px;
-          width: 96px;
-          margin-top: 30px;
-          margin-left: 30px;
         }
         &__text {
           text-align: center;
+        }
+      }
+      &__theme {
+        display: flex;
+        flex-direction: column;
+        border: 2px dotted rgba(0, 0, 0, 0);
+        align-items: center;
+        gap: 3px;
+        width: 96px;
+        height: 96px;
+        margin-top: 30px;
+        margin-left: 30px;
+        &--active {
+          border: 2px dotted gray;
+          background-color: rgba(135, 207, 235, 0.507);
+          height: 96px;
         }
       }
       &__textarea {

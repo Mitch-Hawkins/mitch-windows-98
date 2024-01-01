@@ -1,0 +1,116 @@
+.desktop__modal__content__google {
+  //   border: 2px solid red;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.google {
+  &__header {
+    // border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+  }
+  &__searchbox {
+    // border: 2px solid green;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-direction: column;
+    height: 137px;
+    &__textinput {
+      width: 60%;
+    }
+    &__button {
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 120px;
+      background-color: rgb(172, 172, 172);
+      border-top-color: white;
+      border-left-color: white;
+      border-right-color: black;
+      border-bottom-color: black;
+      &:active {
+        border-top-color: black;
+        border-left-color: black;
+        border-right-color: white;
+        border-bottom-color: white;
+      }
+      &--subscribe {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 60px;
+        background-color: rgb(172, 172, 172);
+        border-top-color: white;
+        border-left-color: white;
+        border-right-color: black;
+        border-bottom-color: black;
+        &:active {
+          border-top-color: black;
+          border-left-color: black;
+          border-right-color: white;
+          border-bottom-color: white;
+        }
+      }
+    }
+  }
+  &__links {
+    // border: 2px solid yellow;
+    display: flex;
+    height: 137px;
+    margin-left: 15px;
+    margin-right: 15px;
+    gap: 2px;
+    &__specialsearches {
+      //   border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      background-color: turquoise;
+      align-items: center;
+      justify-content: center;
+      & a:visited {
+        color: blue;
+      }
+    }
+    &__help {
+      //   border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      background-color: rgb(51, 185, 172);
+      align-items: center;
+      justify-content: center;
+      & a:visited {
+        color: blue;
+      }
+    }
+    &__mailinglist {
+      //   border: 2px solid black;
+      display: flex;
+      gap: 2px;
+      flex-direction: column;
+      width: 35%;
+      background-color: cadetblue;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      & a:visited {
+        color: blue;
+      }
+    }
+  }
+  &__footer {
+    // border: 2px solid orange;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+}

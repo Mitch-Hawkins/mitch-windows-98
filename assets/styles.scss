@@ -1,6 +1,7 @@
 @use "./partials/mixins";
 @use "./partials/menu-bar/nav.scss";
 @use "./partials/desktop.scss";
+@use "./partials/googlebeta.scss";
 
 @font-face {
   font-family: "Windows";
@@ -20,14 +21,14 @@
 body {
   background-color: cadetblue;
   background-image: none;
-  // height: 100vh;
-  // width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
 }
 
 .container {
-  display: flex;
   // border: 2px solid red;
+  display: flex;
   flex-direction: column-reverse;
   height: 100vh;
   width: 100vw;
